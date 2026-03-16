@@ -1,0 +1,18 @@
+.ring {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  border: 2px solid;
+  flex-shrink: 0;
+}
+.hi  { background: var(--green-lt); color: var(--green); border-color: var(--green); }
+.mid { background: var(--amber-lt); color: var(--amber); border-color: var(--amber); }
+.lo  { background: var(--red-lt);   color: var(--red);   border-color: var(--red); }
+.na  { font-size: 13px; color: var(--text-3); }
+
+.sm { width:28px; height:28px; font-size:10px; }

@@ -1,0 +1,28 @@
+.page { max-width: 600px; margin: 0 auto; padding: 40px 24px; }
+.header { margin-bottom: 32px; }
+.title { font-size: 24px; font-weight: 700; color: #111; margin: 0; }
+
+.section { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; margin-bottom: 20px; overflow: hidden; }
+.sectionTitle { font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.08em; padding: 12px 20px; border-bottom: 1px solid #f3f4f6; background: #fafafa; }
+
+.row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 20px; border-bottom: 1px solid #f9fafb; }
+.row:last-child { border-bottom: none; }
+.rowLabel { font-size: 14px; font-weight: 500; color: #111; margin-bottom: 2px; }
+.rowValue { font-size: 14px; color: #374151; }
+.rowHint { font-size: 13px; color: #9ca3af; margin-top: 2px; }
+.rowWithAction { display: flex; align-items: center; gap: 12px; }
+
+.editBtn { background: none; border: 1px solid #e5e7eb; color: #374151; font-size: 13px; padding: 4px 12px; border-radius: 6px; cursor: pointer; }
+.editBtn:hover { background: #f9fafb; }
+
+.editRow { display: flex; align-items: center; gap: 8px; flex: 1; }
+.input { border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px 12px; font-size: 14px; font-family: inherit; color: #111; background: #fff; width: 100%; box-sizing: border-box; }
+.input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.08); }
+
+.passwordForm { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 10px; }
+.pwButtons { display: flex; gap: 8px; margin-top: 4px; }
+
+.verified { color: #16a34a; font-weight: 500; }
+.unverified { color: #d97706; font-weight: 500; }
+.successMsg { font-size: 13px; color: #16a34a; padding: 4px 20px 12px; }
+.errorMsg { font-size: 13px; color: #dc2626; }

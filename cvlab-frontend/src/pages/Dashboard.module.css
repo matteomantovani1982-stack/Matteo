@@ -1,0 +1,106 @@
+.page { display:flex; flex-direction:column; min-height:100%; background:var(--bg); }
+
+/* Topbar */
+.topbar { height:54px; background:white; border-bottom:1px solid var(--border); display:flex; align-items:center; padding:0 20px; gap:12px; flex-shrink:0; }
+.topbarLeft { display:flex; align-items:center; gap:10px; }
+.pageTitle { font-size:16px; font-weight:800; }
+.engineBadge { font-size:11px; color:var(--text-3); background:var(--bg); border:1px solid var(--border); border-radius:99px; padding:2px 10px; }
+.tabBar { display:flex; gap:2px; background:var(--bg); border:1px solid var(--border); border-radius:8px; padding:2px; }
+.tab { background:none; border:none; padding:5px 14px; border-radius:6px; font-size:12px; font-weight:600; font-family:inherit; color:var(--text-3); cursor:pointer; transition:all 0.1s; display:flex; align-items:center; gap:6px; white-space:nowrap; }
+.tabActive { background:white; color:var(--text); box-shadow:0 1px 4px rgba(0,0,0,0.1); }
+.tabBadge { background:#6366f1; color:white; font-size:10px; font-weight:700; padding:1px 5px; border-radius:99px; }
+.refreshBtn { margin-left:auto; background:none; border:1px solid var(--border); border-radius:7px; padding:6px 12px; font-size:12px; font-weight:600; font-family:inherit; cursor:pointer; color:var(--text-2); }
+.refreshBtn:hover { border-color:var(--blue); }
+.refreshBtn:disabled { opacity:0.5; }
+
+/* No prefs warning */
+.noPrefs { background:#fffbeb; border-bottom:1px solid #fde68a; padding:8px 20px; font-size:12px; color:#92400e; display:flex; align-items:center; gap:4px; }
+.noPrefsLink { background:none; border:none; color:#d97706; font-weight:700; cursor:pointer; font-size:12px; text-decoration:underline; font-family:inherit; padding:0; }
+
+/* Content */
+.content { flex:1; padding:20px 24px; overflow-y:auto; }
+.demoBanner { background:#eff6ff; border:1px solid #bfdbfe; border-radius:8px; padding:10px 16px; font-size:12px; color:#1d4ed8; margin-bottom:14px; }
+
+/* Loading */
+.loading { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:60px; }
+.radar { position:relative; width:64px; height:64px; }
+.radarRing { position:absolute; inset:0; border-radius:50%; border:2px solid #6366f1; opacity:0.3; animation:pulse 2s ease-out infinite; }
+.radarRing:nth-child(2) { animation-delay:0.6s; }
+.radarRing:nth-child(3) { animation-delay:1.2s; }
+.radarDot { position:absolute; inset:28px; border-radius:50%; background:#6366f1; }
+@keyframes pulse { 0%{transform:scale(0.4);opacity:0.8} 100%{transform:scale(1.8);opacity:0} }
+.loadingText { font-size:14px; font-weight:600; color:var(--text); text-align:center; max-width:320px; }
+.loadingSub { font-size:12px; color:var(--text-3); }
+
+/* Error */
+.errorBox { margin:40px auto; max-width:400px; text-align:center; background:white; border:1px solid var(--border); border-radius:12px; padding:32px; }
+.errorTitle { font-size:15px; font-weight:700; color:#dc2626; }
+.errorSub { font-size:13px; color:var(--text-3); margin-top:6px; }
+.retryBtn { margin-top:14px; background:#6366f1; color:white; border:none; border-radius:8px; padding:8px 18px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit; }
+
+/* Empty */
+.empty { display:flex; flex-direction:column; align-items:center; padding:60px 24px; gap:8px; text-align:center; }
+.emptyIcon { font-size:40px; }
+.emptyTitle { font-size:15px; font-weight:700; }
+.emptySub { font-size:13px; color:var(--text-3); line-height:1.6; }
+.emptyLink { background:none; border:none; color:#6366f1; font-weight:700; cursor:pointer; font-size:13px; text-decoration:underline; font-family:inherit; padding:0; }
+
+/* Signal cards */
+.cards { display:flex; flex-direction:column; gap:12px; max-width:800px; }
+.oppCard { background:white; border:1px solid var(--border); border-radius:12px; padding:16px 18px; display:flex; flex-direction:column; gap:10px; transition:box-shadow 0.15s; }
+.oppCard:hover { box-shadow:0 4px 16px rgba(0,0,0,0.08); }
+.oppTop { display:flex; align-items:flex-start; gap:12px; }
+.oppLeft { flex:1; min-width:0; }
+.oppCompany { font-size:16px; font-weight:800; color:var(--text); }
+.oppMeta { font-size:12px; color:var(--text-3); display:flex; gap:4px; margin-top:2px; }
+.oppSignalRow { display:flex; flex-wrap:wrap; gap:5px; margin-top:6px; }
+.sigBadge { font-size:11px; padding:3px 9px; border-radius:99px; background:var(--bg); border:1px solid var(--border); color:var(--text-2); font-weight:600; }
+.oppRight { display:flex; flex-direction:column; align-items:flex-end; gap:5px; flex-shrink:0; }
+.fitScore { font-size:26px; font-weight:900; line-height:1; }
+.fitOf { font-size:13px; font-weight:400; color:var(--text-3); }
+.urgBadge { font-size:10px; font-weight:700; padding:3px 9px; border-radius:99px; white-space:nowrap; }
+.sigSummary { font-size:13px; color:var(--text-2); line-height:1.55; background:var(--bg); border-radius:8px; padding:10px 12px; border-left:3px solid #6366f1; }
+.oppAction { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+.oppActionRole { font-size:13px; color:var(--text); }
+.oppSalary { font-size:12px; color:var(--text-3); background:var(--bg); border-radius:99px; padding:3px 10px; }
+.contactChip { font-size:11px; background:#f0fdf4; color:#166534; border:1px solid #bbf7d0; border-radius:99px; padding:3px 10px; font-weight:600; }
+.oppDetail { border-top:1px solid var(--border); padding-top:12px; display:flex; flex-direction:column; gap:10px; }
+.oppSection { display:flex; flex-direction:column; gap:4px; }
+.oppSectionTitle { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-3); }
+.oppBullet { font-size:12px; color:var(--text-2); padding-left:12px; line-height:1.5; }
+.oppActionText { font-size:13px; color:var(--text); line-height:1.55; }
+.oppSources { display:flex; flex-direction:column; gap:4px; }
+.oppSource { font-size:11px; color:var(--blue); text-decoration:none; hover:underline; display:block; }
+.oppFooter { display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); padding-top:10px; }
+.expandBtn { background:none; border:none; font-size:12px; color:var(--text-3); cursor:pointer; font-family:inherit; font-weight:600; }
+.genBtn { background:#6366f1; color:white; border:none; border-radius:8px; padding:8px 16px; font-size:13px; font-weight:700; cursor:pointer; font-family:inherit; }
+.genBtn:hover { background:#4f46e5; }
+
+/* Opening sections */
+.openingSection { margin-bottom:28px; }
+.openingSectionHeader { display:flex; align-items:center; gap:10px; margin-bottom:12px; padding-bottom:10px; border-bottom:2px solid var(--border); }
+.openingSectionDot { width:12px; height:12px; border-radius:50%; flex-shrink:0; }
+.openingSectionTitle { font-size:15px; font-weight:800; color:var(--text); }
+.openingSectionSub { font-size:12px; color:var(--text-3); margin-top:2px; }
+.openingSectionCount { margin-left:auto; font-size:12px; font-weight:700; background:var(--bg); border:1px solid var(--border); border-radius:99px; padding:2px 10px; color:var(--text-3); }
+.openingGrid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:10px; }
+
+/* Opening cards */
+.openingCard { border:1.5px solid; border-radius:12px; padding:14px 16px; display:flex; flex-direction:column; gap:8px; }
+.openingTop { display:flex; align-items:center; justify-content:space-between; }
+.openingBadge { font-size:11px; font-weight:700; padding:3px 10px; border-radius:99px; color:white; }
+.openingSource { font-size:10px; color:var(--text-3); font-weight:600; text-transform:uppercase; letter-spacing:0.05em; }
+.openingTitle { font-size:14px; font-weight:700; color:var(--text); line-height:1.3; }
+.openingCompany { font-size:12px; color:var(--text-2); font-weight:600; }
+.openingSnippet { font-size:12px; color:var(--text-3); line-height:1.5; }
+.openingFooter { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:4px; }
+.openingSub { font-size:11px; color:var(--text-3); font-style:italic; }
+.openingBtns { display:flex; gap:6px; align-items:center; }
+.viewBtn { font-size:12px; font-weight:600; color:var(--blue); text-decoration:none; }
+.genBtnSm { background:#0f172a; color:white; border:none; border-radius:7px; padding:6px 12px; font-size:12px; font-weight:700; cursor:pointer; font-family:inherit; white-space:nowrap; }
+.genBtnSm:hover { background:#1e293b; }
+
+/* Urgency dots */
+.dotRed   { }
+.dotAmber { }
+.dotGrey  { }

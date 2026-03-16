@@ -1,0 +1,30 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.done  { background: var(--green-lt); color: var(--green); }
+.done .dot { background: var(--green); }
+
+.running { background: var(--blue-lt); color: var(--blue); }
+.running .dot { background: var(--blue); animation: pulse 1.4s infinite; }
+
+.queued { background: var(--bg-active); color: var(--text-2); }
+.queued .dot { background: var(--text-3); }
+
+.failed { background: var(--red-lt); color: var(--red); }
+.failed .dot { background: var(--red); }
+
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }

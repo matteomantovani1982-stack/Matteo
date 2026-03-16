@@ -1,0 +1,27 @@
+FROM python:3.11-slim
+
+# cache-bust: 1772782645
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+
+RUN pip install --upgrade pip --trusted-host pypi.org --trusted-host files.pythonhosted.org && \
+    pip install --no-cache-dir \
+        --trusted-host pypi.org \
+        --trusted-host files.pythonhosted.org \
+        -r requirements.txt
+
+COPY app/ ./app/
+COPY alembic.ini .
+COPY app/db/migrations/ ./app/db/migrations/
+
+RUN useradd --create-home --uid 1001 migrator \
+    && chown -R migrator:migrator /app
+USER migrator
+
+CMD ["alembic", "upgrade", "head"]
