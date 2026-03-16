@@ -204,7 +204,7 @@ async def update_pipeline_stage(
     if payload.notes is not None:
         job_run.pipeline_notes = payload.notes
     if payload.stage == "applied" and not job_run.applied_at:
-        job_run.applied_at = datetime.now(timezone.utc)
+        job_run.applied_at = datetime.now(timezone.utc).replace(tzinfo=None)
 
     await db.flush()
     await db.commit()
